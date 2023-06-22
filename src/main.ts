@@ -13,7 +13,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     <a href="https://www.typescriptlang.org/" target="_blank">
       <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
     </a>
-    <h1>Vite + TypeScript</h1>
+    <h1>Vite + TypeScript ${process.env.VITE_TEXT_MESSAGE} :::::::  ${process.env.TEXT_MESSAGE} ::::::: ${process.env.DEV_NUM}</h1>
     <div class="card">
       <button id="counter" type="button"></button>
     </div>
