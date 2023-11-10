@@ -1,1 +1,1 @@
-# vite-vanilla-library
+# vite-vanilla-playground

@@ -1,5 +1,5 @@
 {
-  "name": "vite-vanilla-library",
+  "name": "vite-vanilla-playground",
   "private": true,
   "version": "0.0.0",
   "scripts": {
@@ -24,7 +24,7 @@
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "prettier": "^2.8.8",
     "terser": "^5.18.0",
-    "typescript": "^5.0.2",
+    "typescript": "^5.2.2",
     "vite": "^4.3.9"
   }
 }
