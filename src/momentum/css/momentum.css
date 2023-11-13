@@ -1,0 +1,67 @@
+.hidden {
+  display: none;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  background-attachment: fixed;
+}
+
+#uid_username {
+  margin: 0;
+  padding: 20px;
+}
+
+#uid_clock {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+  padding-top: 160px;
+  font-size: 3rem;
+  filter: drop-shadow(2px 4px 6px gray);
+  min-width: 500px;
+}
+
+#uid_todo {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  padding-top: 70px;
+  filter: drop-shadow(0px 0px 0.5px gray);
+  min-width: 500px;
+}
+
+#uid_todo_form > input {
+  width: 500px;
+  height: 32px;
+  font-size: 15px;
+  border: 0;
+  border-radius: 15px;
+  outline: none;
+  padding-left: 10px;
+  background-color: rgb(233, 233, 233);
+}
+
+#uid_todo > ul {
+  width: 500px;
+  ilter: drop-shadow(2px 4px 6px black);
+}
+
+#uid_todo > p {
+  filter: drop-shadow(2px 4px 6px black);
+}
+
+button {
+  border-radius: 9px;
+  outline: none;
+}

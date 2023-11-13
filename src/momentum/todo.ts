@@ -41,9 +41,10 @@ const handleDelTodo = (event: MouseEvent) => {
 
     if (parentElement) {
       const delID = parentElement.dataset.id;
-
       parentElement.remove();
-      localStorage.setItem('todos', JSON.stringify(todos.filter((todo) => todo.id !== delID)));
+      const newTodos = todos.filter((todo) => todo.id !== delID);
+      localStorage.setItem('todos', JSON.stringify(newTodos));
+      todos = newTodos;
     }
   }
 };

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./src/css/momentum.css" />
+    <link rel="stylesheet" href="./src/momentum/css/momentum.css" />
     <title>Vite-Vanilla-playground</title>
   </head>
   <body>
@@ -17,10 +17,13 @@
       <div id="uid_clock">
         <h1></h1>
       </div>
-      <form id="uid_todo_form">
-        <input type="text" />
-      </form>
-      <ul></ul>
+      <div id="uid_todo">
+        <p>오늘의 할일은 무엇인가요?</p>
+        <form id="uid_todo_form">
+          <input type="text" />
+        </form>
+        <ul></ul>
+      </div>
     </div>
     <script type="module" src="./src/momentum/index.ts"></script>
   </body>

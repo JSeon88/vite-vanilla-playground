@@ -1,3 +1,5 @@
+import { imgInit } from './image';
+
 const loginFormEl = document.querySelector('#uid_login_form');
 const inputEl = loginFormEl?.querySelector('input');
 const usernameEl = document.querySelector('#uid_username');
@@ -21,6 +23,7 @@ const handleLogin = (event: Event) => {
     localStorage.setItem('username', username);
     drawUsername(username);
   }
+  imgInit();
 };
 
 export const loginInit = () => {
@@ -28,5 +31,6 @@ export const loginInit = () => {
 
   if (username) {
     drawUsername(username);
+    imgInit();
   }
 };
