@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/momentum.css" />
+    <title>Vite-Vanilla-playground</title>
+  </head>
+  <body>
+    <header id="uid_header"></header>
+
+    <form id="uid_login_form">
+      <input type="text" value="" placeholder="username을 입력해주세요" required />
+      <button>로그인</button>
+    </form>
+    <div id="uid_momentum" class="hidden">
+      <div id="uid_username"></div>
+      <div id="uid_clock">
+        <h1></h1>
+      </div>
+      <div id="uid_todo">
+        <p>오늘의 할일은 무엇인가요?</p>
+        <form id="uid_todo_form">
+          <input type="text" />
+        </form>
+        <ul></ul>
+      </div>
+    </div>
+    <!-- <script type="module" src="../header/index.ts"></script> -->
+    <script type="module" src="./js/index.ts"></script>
+  </body>
+</html>
