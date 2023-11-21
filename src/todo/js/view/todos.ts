@@ -10,7 +10,7 @@ const createNewTodoNode = () => {
   return template.content.firstElementChild?.cloneNode(true);
 };
 
-const getTodoElement = (todo: Todo, index: number, events: Events) => {
+const getTodoElement = (todo: Todo, index: number) => {
   const { text, completed } = todo;
 
   const element = createNewTodoNode() as HTMLElement;
@@ -24,9 +24,8 @@ const getTodoElement = (todo: Todo, index: number, events: Events) => {
     (element.querySelector('input.toggle') as HTMLInputElement).checked = true;
   }
 
-  const handler = () => events.deleteItem(index);
-  element.querySelector('button.destroy')?.addEventListener('click', handler);
-
+  const destroyEl = element.querySelector('button.destroy') as HTMLButtonElement;
+  destroyEl.dataset.index = String(index);
   return element;
 };
 
@@ -36,10 +35,17 @@ export default (targetElement: HTMLElement, { todos }: State, events: Events) =>
   newTodoList.innerHTML = '';
 
   todos
-    .map((todo, index) => getTodoElement(todo, index, events))
+    .map((todo, index) => getTodoElement(todo, index))
     .forEach((element) => {
       newTodoList.appendChild(element);
     });
+
+  newTodoList.addEventListener('click', (e) => {
+    const target = e.target;
+    if (target instanceof HTMLButtonElement && target.matches('button.destroy')) {
+      events.deleteItem(Number(target.dataset.index));
+    }
+  });
 
   return newTodoList;
 };
