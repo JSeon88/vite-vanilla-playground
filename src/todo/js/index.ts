@@ -1,3 +1,4 @@
+import applyDiff from './applyDiff.js';
 import getTodos from './getTodos.js';
 import registry from './registry.js';
 import counterView from './view/counter.js';
@@ -19,7 +20,8 @@ const render = () => {
 
     if (main instanceof HTMLElement) {
       const newMain = registry.renderRoot(main, state);
-      main.replaceWith(newMain);
+      // 실제 노드와 가상 노드를 비교하여 반영.
+      applyDiff(document.body, main, newMain);
     }
   });
 };
