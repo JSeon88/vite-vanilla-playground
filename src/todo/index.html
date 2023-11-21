@@ -15,11 +15,11 @@
       <section class="main">
         <input id="toggle-all" class="toggle-all" type="checkbox" />
         <label for="toggle-all">Mark all as complete</label>
-        <ul class="todo-list"></ul>
+        <ul class="todo-list" data-component="todos"></ul>
       </section>
       <footer class="footer">
         <span class="todo-count"></span>
-        <ul class="filters">
+        <ul class="filters" data-component="filters">
           <li>
             <a href="#/">All</a>
           </li>
@@ -36,6 +36,6 @@
     <footer class="info">
       <p>Double-click to edit a todo</p>
     </footer>
-    <script type="module" src="./js/controller.ts"></script>
+    <script type="module" src="./js/index.ts"></script>
   </body>
 </html>
