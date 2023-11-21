@@ -1,5 +1,5 @@
+import { State } from '../type/todo.js';
 import applyDiff from './applyDiff.js';
-import getTodos from './getTodos.js';
 import registry from './registry.js';
 import appView from './view/app.js';
 import counterView from './view/counter.js';
@@ -11,16 +11,30 @@ registry.add('todos', todosView);
 registry.add('counter', counterView);
 registry.add('filters', filtersView);
 
-const state = {
-  todos: getTodos(),
+const state: State = {
+  todos: [],
   currentFilter: 'All',
+};
+
+const events = {
+  deleteItem: (index: number) => {
+    state.todos.splice(index, 1);
+    render();
+  },
+  addItem: (text: string) => {
+    state.todos.push({
+      text,
+      completed: false,
+    });
+    render();
+  },
 };
 
 const render = () => {
   window.requestAnimationFrame(() => {
     const main = document.querySelector('#root');
     if (main instanceof HTMLElement) {
-      const newMain = registry.renderRoot(main, state);
+      const newMain = registry.renderRoot(main, state, events);
       // 실제 노드와 가상 노드를 비교하여 반영.
       applyDiff(document.body, main, newMain);
     }
