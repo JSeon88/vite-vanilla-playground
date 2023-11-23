@@ -4,7 +4,7 @@ export const menuList = [
     title: 'momentum',
   },
   {
-    url: '/src/todo/index.html',
+    url: '/src/todo/index2.html',
     title: 'todo',
   },
 ];
